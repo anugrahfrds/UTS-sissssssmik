@@ -1,0 +1,193 @@
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 1
+
+
+
+
+
+       MCS-51 Family Macro Assembler   A S E M - 5 1   V 1.3
+       =====================================================
+
+
+
+	Source File:	D:\program\Assembly\Sismin\Sismin.asm
+	Object File:	D:\program\Assembly\Sismin\Sismin.hex
+	List File:	D:\program\Assembly\Sismin\Sismin.lst
+
+
+
+ Line  I  Addr  Code            Source
+
+    1:		N      0000	ORG 00H
+    2:
+    3:	  0000			START:
+    4:	  0000	30 B0 17	JNB P3.0, LED1
+    5:	  0003	30 B1 1C	JNB P3.1, LED2
+    6:	  0006	30 B2 21	JNB P3.2, LED3
+    7:	  0009	30 B3 26	JNB P3.3, LED4
+    8:	  000C	30 B4 2B	JNB P3.4, LED5
+    9:	  000F	30 B5 30	JNB P3.5, LED6
+   10:	  0012	30 B6 35	JNB P3.6, LED7
+   11:	  0015	30 B7 3A	JNB P3.7, LED8
+   12:	  0018	80 E6		SJMP START
+   13:
+   14:	  001A			LED1:
+   15:	  001A	75 90 FE	MOV P1,#11111110B
+   16:	  001D	75 80 79	MOV P0,#1111001B
+   17:	  0020	80 DE		SJMP START
+   18:
+   19:	  0022			LED2:
+   20:	  0022	75 90 FD	MOV P1,#11111101B
+   21:	  0025	75 80 24	MOV P0,#0100100B
+   22:	  0028	80 D6		SJMP START
+   23:
+   24:	  002A			LED3:
+   25:	  002A	75 90 FB	MOV P1,#11111011B
+   26:	  002D	75 80 30	MOV P0,#0110000B
+   27:	  0030	80 CE		SJMP START
+   28:
+   29:	  0032			LED4:
+   30:	  0032	75 90 F7	MOV P1,#11110111B
+   31:	  0035	75 80 19	MOV P0,#0011001B
+   32:	  0038	80 C6		SJMP START
+   33:
+   34:	  003A			LED5:
+   35:	  003A	75 90 EF	MOV P1,#11101111B
+   36:	  003D	75 80 12	MOV P0,#0010010B
+   37:	  0040	80 BE		SJMP START
+   38:
+   39:	  0042			LED6:
+   40:	  0042	75 90 DF	MOV P1,#11011111B
+   41:	  0045	75 80 02	MOV P0,#0000010B
+   42:	  0048	80 B6		SJMP START
+   43:
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 2
+
+
+
+ Line  I  Addr  Code            Source
+
+   44:	  004A			LED7:
+   45:	  004A	75 90 BF	MOV P1,#10111111B
+   46:	  004D	75 80 78	MOV P0,#1111000B
+   47:	  0050	80 AE		SJMP START
+   48:
+   49:	  0052			LED8:
+   50:	  0052	75 90 7F	MOV P1,#01111111B
+   51:	  0055	75 80 00	MOV P0,#0000000B
+   52:	  0058	80 A6		SJMP START
+   53:
+   54:
+   55:				END
+
+
+
+
+
+                     register banks used:  ---
+
+                     no errors
+
+
+
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 3
+
+
+
+
+
+	       L I S T   O F   S Y M B O L S
+	       =============================
+
+
+SYMBOL				  TYPE     VALUE	LINE
+------------------------------------------------------------
+??ASEM_51			  NUMBER    8051
+??VERSION			  NUMBER    0130
+AC				  BIT	      D6
+ACC				  DATA	      E0
+B				  DATA	      F0
+CY				  BIT	      D7
+DPH				  DATA	      83
+DPL				  DATA	      82
+EA				  BIT	      AF
+ES				  BIT	      AC
+ET0				  BIT	      A9
+ET1				  BIT	      AB
+EX0				  BIT	      A8
+EX1				  BIT	      AA
+EXTI0				  CODE	    0003
+EXTI1				  CODE	    0013
+F0				  BIT	      D5
+IE				  DATA	      A8
+IE0				  BIT	      89
+IE1				  BIT	      8B
+INT0				  BIT	      B2
+INT1				  BIT	      B3
+IP				  DATA	      B8
+IT0				  BIT	      88
+IT1				  BIT	      8A
+LED1				  CODE	    001A	  14
+LED2				  CODE	    0022	  19
+LED3				  CODE	    002A	  24
+LED4				  CODE	    0032	  29
+LED5				  CODE	    003A	  34
+LED6				  CODE	    0042	  39
+LED7				  CODE	    004A	  44
+LED8				  CODE	    0052	  49
+OV				  BIT	      D2
+P				  BIT	      D0
+P0				  DATA	      80
+P1				  DATA	      90
+P2				  DATA	      A0
+P3				  DATA	      B0
+PCON				  DATA	      87
+PS				  BIT	      BC
+PSW				  DATA	      D0
+PT0				  BIT	      B9
+PT1				  BIT	      BB
+PX0				  BIT	      B8
+PX1				  BIT	      BA
+RB8				  BIT	      9A
+RD				  BIT	      B7
+REN				  BIT	      9C
+RESET				  CODE	    0000
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 4
+
+
+
+SYMBOL				  TYPE     VALUE	LINE
+------------------------------------------------------------
+RI				  BIT	      98
+RS0				  BIT	      D3
+RS1				  BIT	      D4
+RXD				  BIT	      B0
+SBUF				  DATA	      99
+SCON				  DATA	      98
+SINT				  CODE	    0023
+SM0				  BIT	      9F
+SM1				  BIT	      9E
+SM2				  BIT	      9D
+SP				  DATA	      81
+START				  CODE	    0000	   3
+T0				  BIT	      B4
+T1				  BIT	      B5
+TB8				  BIT	      9B
+TCON				  DATA	      88
+TF0				  BIT	      8D
+TF1				  BIT	      8F
+TH0				  DATA	      8C
+TH1				  DATA	      8D
+TI				  BIT	      99
+TIMER0				  CODE	    000B
+TIMER1				  CODE	    001B
+TL0				  DATA	      8A
+TL1				  DATA	      8B
+TMOD				  DATA	      89
+TR0				  BIT	      8C
+TR1				  BIT	      8E
+TXD				  BIT	      B1
+WR				  BIT	      B6
